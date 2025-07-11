@@ -1,7 +1,7 @@
 import useFetchPocketCards from "../services/useFetchPocketCards";
 import React, { useState } from "react";
-import PokedexLayout from "../components/Pokedex/PokedexLayout";
-import SetSelector from "../components/Pokedex/SetSelector";
+import PokedexLayout from "../components/Pokedex/PokedexLayout,jsx";
+import SetSelector from "../components/Pokedex/SetSelector.jsx";
 import "../styles/Pokedex.css";
 
 const Pokedex = () => {

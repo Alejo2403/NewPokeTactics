@@ -1,9 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-
+import {getAuth, signOut} from  'firebase/auth'
 import { useState } from "react";
 
-const NavBar = () => {
+import appFirebase from "../firebase/credentials.js";
 
+const NavBar = () => {
+  
+  const auth =getAuth(appFirebase)
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,6 +37,7 @@ const NavBar = () => {
         <Link onClick={() => setMenuOpen(false)} to="/gyms" className={isActive('/gyms') ? 'border-b-2 border-yellow-400' : ''}>Gyms</Link>
         <Link onClick={() => setMenuOpen(false)} to="/lab" className={isActive('/lab') ? 'border-b-2 border-yellow-400' : ''}>Laboratory</Link>
         <Link onClick={() => setMenuOpen(false)} to="/metas" className={isActive('/metas') ? 'border-b-2 border-yellow-400' : ''}>Metas</Link>
+        <button onClick={()=>signOut(auth)}>Log Out</button>
       </div>
     </div>
   )

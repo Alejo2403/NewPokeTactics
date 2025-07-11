@@ -24,7 +24,7 @@ const Pokedex = () => {
           <div className="flex items-center h-full">
             <h1 className="text-3xl font-bold text-black">ACA VAN LOS FILTROS</h1>
           </div>
-          <SetSelector selectedSet={selectedSet} setSelectedSet={setSelectedSet} />
+          <SetSelector selectedSet={selectedSet} setSelectedSet={setSelectedSet} setPage={setPage} />
         </div>
 
         {loading ? (

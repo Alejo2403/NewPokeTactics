@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+
+
 const SETS = [
   { id: "sv1", name: "Scarlet & Violet", image: "Sets/SetSV.png" },
   { id: "sv2", name: "Paldea Evolved", image: "Sets/SetPE.png" },
@@ -17,7 +19,7 @@ const SETS = [
   { id: "sv10", name: "Destined Rivals", image: "Sets/SetDR.png" }
 ]
 
-const SetSelector = ({selectedSet, setSelectedSet}) => {
+const SetSelector = ({selectedSet, setSelectedSet, setPage}) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -38,6 +40,7 @@ const SetSelector = ({selectedSet, setSelectedSet}) => {
                             key={set.id}
                             onClick={() => {
                                 setSelectedSet(set);
+                                setPage(1);
                                 setDropdownOpen(false);
                             }}
                         >
